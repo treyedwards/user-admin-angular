@@ -1,0 +1,73 @@
+.container {
+  margin: auto;
+  max-width: 1024px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff; /* White background */
+}
+
+.scroll-container {
+  width: 1024px;
+  height: 400px;
+  overflow: auto;
+  border: 1px solid #ccc; /* Add a border to visualize the container */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8f8f8;
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Ensure the header stays on top of the content */
+  border-top: none; /* Remove the top border of the sticky header */
+  border-bottom: 2px solid #ccc; /* Thicker bottom border for header */
+  font-weight: bold;
+  color: #333; /* Darker text color */
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1; /* Light grey hover effect */
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+.id_column {
+  width: 5%;
+}
+
+.email_column {
+  width: 25%;
+}
+
+.name_column {
+  width: 20%;
+}
+
+.edit_column {
+  cursor: pointer;
+  color: #007bff; /* Blue color for edit icon */
+  transition: color 0.3s ease;
+}
+
+.edit_column:hover {
+  color: #0056b3; /* Darker blue on hover */
+}

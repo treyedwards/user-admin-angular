@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <h1 class="center">Edit User</h1>
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" formControlName="email" class="form-control">
+            <span *ngIf="!userForm.get('userData.email')?.valid && userForm.get('userData.email')?.touched"
+              class="help-block">Please enter a valid email!</span>
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" formControlName="firstName" class="form-control">
+            <span *ngIf="!userForm.get('userData.firstName')?.valid && userForm.get('userData.firstName')?.touched"
+              class="help-block">Please enter First Name!</span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName" class="form-control">
+            <span *ngIf="!userForm.get('userData.lastName')?.valid && userForm.get('userData.lastName')?.touched"
+              class="help-block">Please enter Last Name!</span>
+          </div>
+          <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" id="userName" formControlName="userName" class="form-control">
+            <span *ngIf="!userForm.get('userData.userName')?.valid && userForm.get('userData.userName')?.touched"
+              class="help-block">
+              <!--
+              <span *ngIf="userForm.get('userData.userName').errors['nameIsForbidden']">This name is invalid!</span>
+              <span *ngIf="userForm.get('userData.userName').errors['required']">This field is required!</span>
+              -->
+
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName="password" class="form-control">
+            <span *ngIf="!userForm.get('userData.password')?.valid && userForm.get('userData.password')?.touched"
+              class="help-block">Please enter a valid password!</span>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+            <span
+              *ngIf="!userForm.get('userData.confirmPassword')?.valid && userForm.get('userData.confirmPassword')?.touched"
+              class="help-block">Please enter a valid password!</span>
+          </div>
+        </div>
+        <span *ngIf="!userForm.valid && userForm.touched" class="help-block">Please enter valid data!</span>
+        <div class="button-container">
+          <button class="btn btn-primary" type="button" [disabled]="!isEdit"
+            (click)="onUpdateUser()">Update</button>
+          <button class="btn btn-primary" type="button" [disabled]="!isEdit"
+            (click)="onDeleteUser()">Delete</button>
+          <button class="btn btn-primary" type="button" [disabled]="!isNewUser"
+            (click)="onCreateNew()">Create</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+          <button class="btn btn-primary" type="button" (click)="onClearForm()">Clear Form</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

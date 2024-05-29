@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 home-container">
+      <h1>Welcome to the User Administration Application!</h1>
+
+      <p *ngIf="!isLoggedIn">Please <a routerLink="/login">Login</a> or <a routerLink="/register"> Create a New
+          Account</a> to Continue.</p>
+      <h3>
+        <p *ngIf="isLoggedIn">
+          Head on over to <a routerLink="/search">Search</a> to begin or <a (click)="onLogout()">Logout</a>.
+        </p>
+      </h3>
+    </div>
+  </div>
+</div>

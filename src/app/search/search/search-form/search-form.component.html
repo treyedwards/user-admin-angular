@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="searchForm" autocomplete="off"> <!-- Add autocomplete="off" to the form -->
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" formControlName="email" autocomplete="off" class="form-control">
+            <span *ngIf="!searchForm.get('userData.email')?.valid && searchForm.get('userData.email')?.touched"
+              class="help-block">Please enter a valid email!</span>
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" formControlName="firstName" autocomplete="new-password" class="form-control"> <!-- Use new-password -->
+            <span *ngIf="!searchForm.get('userData.firstName')?.valid && searchForm.get('userData.firstName')?.touched"
+              class="help-block">Please enter First Name!</span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName" autocomplete="new-password" class="form-control"> <!-- Use new-password -->
+            <span *ngIf="!searchForm.get('userData.lastName')?.valid && searchForm.get('userData.lastName')?.touched"
+              class="help-block">Please enter Last Name!</span>
+          </div>
+          <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" id="userName" formControlName="userName" autocomplete="new-password" class="form-control"> <!-- Use new-password -->
+            <span *ngIf="!searchForm.get('userData.userName')?.valid && searchForm.get('userData.userName')?.touched"
+              class="help-block">
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

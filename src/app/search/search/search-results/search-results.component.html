@@ -1,0 +1,39 @@
+<div>
+  <section>
+    <div class="container">
+      <div class="scroll-container">
+        <table class="table" *ngIf="'users?.length > 0'">
+          <thead>
+            <tr>
+              <th class="id_column">ID</th>
+              <th class="email_column">Email</th>
+              <th class="name_column">User name</th>
+              <th class="name_column">First name</th>
+              <th class="name_column">Last name</th>
+              <th class="id_column"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users; let index = index">
+              <td class="id_column">{{user.id}}</td>
+              <td class="email_column">{{user.emailAddress}}</td>
+              <td class="name_column">{{user.userName}}</td>
+              <td class="name_column">{{user.firstName}}</td>
+              <td class="name_column">{{user.lastName}}</td>
+              <td>
+                <mat-icon
+                  class="edit_column"
+                  (click)="onItemEdit(user)"
+                  aria-hidden="false"
+                  aria-label="Edit User"
+                >
+                  edit
+                </mat-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
